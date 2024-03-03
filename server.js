@@ -22,7 +22,7 @@ app.use("/api/results", resultRoute)
     // Retrieve the request's body
     // const event = req.body;
     // Do something with event
-    res.send(200);
+    // res.send(200);
 // });
 
 
