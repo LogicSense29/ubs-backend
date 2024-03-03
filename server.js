@@ -18,12 +18,12 @@ app.use(express.json());
 
 app.use("/api/users", authRoute)
 app.use("/api/results", resultRoute)
-app.post("http://umerabusinesschool.com/paystack-webhook", function(req, res) {
+// app.post("http://umerabusinesschool.com/paystack-webhook", function(req, res) {
     // Retrieve the request's body
-    const event = req.body;
+    // const event = req.body;
     // Do something with event
     res.send(200);
-});
+// });
 
 
 
