@@ -8,9 +8,6 @@ const resultRoute = require("./routes/results")
 const app = express();
 const PORT = `${process.env.PORT}`
 
-
-app.use(cors());
-app.use(express.json());
 db.connect();
 
 app.use((req, res, next) => {
@@ -19,6 +16,9 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
   });
+
+app.use(cors());
+app.use(express.json());
 
 
 app.use("/api/users", authRoute)
