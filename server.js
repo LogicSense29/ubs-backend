@@ -9,7 +9,7 @@ const app = express();
 const PORT = `${process.env.PORT}`
 
 const corsOptions = {
-    origin: "https://ubs-personality-test.vercel.app",
+    origin: "https://ubs-personality-test.vercel.app/",
   };
 
 
@@ -17,7 +17,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://ubs-personality-test.vercel.app');
+    res.header('Access-Control-Allow-Origin', 'https://ubs-personality-test.vercel.app/');
     res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
