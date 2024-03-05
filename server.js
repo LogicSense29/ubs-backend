@@ -9,7 +9,7 @@ const app = express();
 const PORT = `${process.env.PORT}`
 
 const corsOptions = {
-    origin: "https://ubs-personality-test.vercel.app",
+    origin: "*",
   };
 
 
