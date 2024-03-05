@@ -12,7 +12,6 @@ const corsOptions = {
     origin: "https://ubs-personality-test.vercel.app",
   };
 
-db.connect();
 
 app.use(cors(corsOptions));
 app.use(express.json());
@@ -23,7 +22,8 @@ app.use((req, res, next) => {
     res.header('Access-Control-Allow-Headers', 'Content-Type');
     next();
   });
-
+  
+db.connect();
 
 
 
