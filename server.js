@@ -8,10 +8,10 @@ const resultRoute = require("./routes/results")
 const app = express();
 const PORT = `${process.env.PORT}`
 
-db.connect();
 
 app.use(cors());
 app.use(express.json());
+db.connect();
 
 
 
