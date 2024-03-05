@@ -7,7 +7,7 @@ const DATABASE= `${process.env.DATABASE}`
 const db = new pg.Client(
     {
         user: "postgres",
-        host: "localhost",
+        host: "ubs-pt.cyclic.app",
         database: DATABASE,
         password: PASSWORD,
         port: 5432,
