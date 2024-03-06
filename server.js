@@ -8,26 +8,21 @@ const resultRoute = require("./routes/results")
 const app = express();
 const PORT = `${process.env.PORT}`
 
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://ubs-personality-test.vercel.app');
-    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-  });
-  
 
-// const corsOptions = {
-//     origin: 'https://ubs-personality-test.vercel.app',
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    // credentials: true,
-//   };
+
+const corsOptions = {
+    origin: 'https://ubs-personality-test.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  };
 
 
   
 
 
-// app.use(cors(corsOptions));
-app.options('*', cors()) 
+app.use(cors(corsOptions));
+
+app.options('*', cors(cors)) 
 app.use(express.json());
 
 app.get("/", (req,res) =>{
