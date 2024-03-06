@@ -8,7 +8,9 @@ const resultRoute = require("./routes/results")
 const app = express();
 const PORT = `${process.env.PORT}`
 
+db.connect();
 
+app.use(express.json());
 
 const corsOptions = {
     origin: 'https://ubs-personality-test.vercel.app',
@@ -19,15 +21,11 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-// app.options('*', cors()) 
-app.use(express.json());
 
 app.get("/", (req,res) =>{
     res.json({message: "This is app is for lovers"})
 })
 
-  
-db.connect();
 
 
 
