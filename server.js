@@ -36,7 +36,7 @@ app.use(express.json());
 
 const corsOptions = {
     origin: 'https://ubs-personality-test.vercel.app',
-    methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
+    methods: ['GET','HEAD','OPTIONS','PUT','PATCH','POST','DELETE'],
     credentials: true,
     allowedHeaders: 'Content-Type,Authorization'
   };
