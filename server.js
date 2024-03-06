@@ -19,7 +19,8 @@ const PORT = `${process.env.PORT}`
 
 
 // app.use(cors(corsOptions));
-app.options('*', cors()) 
+app.options('/api/users', cors()) 
+app.options('/api/results', cors())
 app.use(express.json());
 
 app.get("/", (req,res) =>{
@@ -31,8 +32,8 @@ db.connect();
 
 
 
-app.use("/api/users", authRoute)
-app.use("/api/results", resultRoute)
+app.use("/api/users",cors(), authRoute)
+app.use("/api/results",cors(), resultRoute)
 // app.post("http://umerabusinesschool.com/paystack-webhook", function(req, res) {
     // Retrieve the request's body
     // const event = req.body;
