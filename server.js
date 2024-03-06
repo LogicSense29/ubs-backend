@@ -13,7 +13,7 @@ db.connect();
 app.use(express.json());
 
 const corsOptions = {
-    origin: 'https://ubs-personality-test.vercel.app',
+    origin: 'https://ubs-personality-test.vercel.app/',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     allowedHeaders: 'Content-Type,Authorization'
