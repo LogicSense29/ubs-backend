@@ -12,15 +12,27 @@ db.connect();
 
 app.use(express.json());
 
-const corsOptions = {
+// const corsOptions = {
+//     origin: 'https://ubs-personality-test.vercel.app',
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+//     credentials: true,
+//     allowedHeaders: 'Content-Type,Authorization'
+//   };
+
+
+// app.use(cors(corsOptions));
+app.options('/api/users', cors({
     origin: 'https://ubs-personality-test.vercel.app',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
-    allowedHeaders: 'Content-Type,Authorization'
-  };
-
-
-app.use(cors(corsOptions));
+  }));
+  
+  // Middleware for handling preflight OPTIONS request for '/api/results'
+  app.options('/api/results', cors({
+    origin: 'https://ubs-personality-test.vercel.app',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  }));
 
 
 app.get("/", (req,res) =>{
