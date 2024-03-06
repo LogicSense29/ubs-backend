@@ -8,17 +8,17 @@ const resultRoute = require("./routes/results")
 const app = express();
 const PORT = `${process.env.PORT}`
 
-const corsOptions = {
-    origin: 'https://ubs-personality-test.vercel.app',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+// const corsOptions = {
+//     origin: 'https://ubs-personality-test.vercel.app',
+//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     // credentials: true,
-  };
+//   };
 
 
   
 
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 app.options('*', cors()) 
 app.use(express.json());
 
