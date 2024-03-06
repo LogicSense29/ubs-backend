@@ -35,7 +35,7 @@ app.use(express.json());
 //   });
 
 const corsOptions = {
-    origin: '*',
+    origin: 'https://ubs-personality-test.vercel.app',
     methods: 'GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE',
     credentials: true,
     allowedHeaders: 'Content-Type,Authorization'
