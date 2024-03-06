@@ -10,6 +10,16 @@ const PORT = `${process.env.PORT}`
 
 db.connect();
 
+const corsOptions = {
+    origin: 'https://ubs-personality-test.vercel.app',
+    methods: ['GET','HEAD','OPTIONS','PUT','PATCH','POST','DELETE'],
+    credentials: true,
+    allowedHeaders: 'Content-Type,Authorization'
+  };
+
+
+app.use(cors(corsOptions));
+
 app.use(express.json());
 
 // app.options('/api/users', (req, res) => {
@@ -34,15 +44,6 @@ app.use(express.json());
 //     res.status(204).end();
 //   });
 
-const corsOptions = {
-    origin: 'https://ubs-personality-test.vercel.app',
-    methods: ['GET','HEAD','OPTIONS','PUT','PATCH','POST','DELETE'],
-    credentials: true,
-    allowedHeaders: 'Content-Type,Authorization'
-  };
-
-
-app.use(cors(corsOptions));
 // app.options('/api/users', cors({
 //     origin: 'https://ubs-personality-test.vercel.app',
 //     methods: 'GET,OPTIONS,HEAD,PUT,PATCH,POST,DELETE',
