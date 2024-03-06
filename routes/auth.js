@@ -7,7 +7,7 @@ const {getUsers, addUsers} = require("../controllers/auth")
 
 router.post("/login", getUsers);
 
-router.post("/register", addUserValidation, vMW, addUsers);
+router.post("/register", addUsers);
 
 module.exports = router;
 
