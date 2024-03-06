@@ -12,32 +12,34 @@ db.connect();
 
 app.use(express.json());
 
-const corsOptions = {
-    origin: 'https://ubs-personality-test.vercel.app',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    allowedHeaders: 'Content-Type,Authorization'
-  };
-
-
-app.use(cors(corsOptions));
-// app.options('/api/users', cors({
+// const corsOptions = {
 //     origin: 'https://ubs-personality-test.vercel.app',
 //     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
 //     credentials: true,
-//   }));
+//     allowedHeaders: 'Content-Type,Authorization'
+//   };
+
+
+// app.use(cors(corsOptions));
+app.options('/api/users', cors({
+    origin: 'https://ubs-personality-test.vercel.app',
+    methods: 'GET,OPTIONS,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization',
+    credentials: true,
+  }));
   
   // Middleware for handling preflight OPTIONS request for '/api/results'
-//   app.options('/api/results', cors({
-//     origin: 'https://ubs-personality-test.vercel.app',
-//     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-//     credentials: true,
-//   }));
+  app.options('/api/results', cors({
+    origin: 'https://ubs-personality-test.vercel.app',
+    methods: 'GET,OPTIONS,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization',
+    credentials: true,
+  }));
 
 
-app.get("/", (req,res) =>{
-    res.json({message: "This is app is for lovers"})
-})
+// app.get("/", (req,res) =>{
+//     res.json({message: "This is app is for lovers"})
+// })
 
 
 
