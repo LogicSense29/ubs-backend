@@ -6,9 +6,9 @@ const cors =require("cors")
 
 router.post("/:id", addResults)
 
+app.options('/', cors())
 router.use(requireAuth);
 
-app.options('/', cors())
-router.get("/", getResults, cors())
+router.get("/",  cors(), getResults)
 
 module.exports = router;
