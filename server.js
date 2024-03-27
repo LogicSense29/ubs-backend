@@ -10,15 +10,17 @@ const PORT = `${process.env.PORT}`
 
 db.connect();
 
+const listOfOrigin = ['https://ubs-personality-test.vercel.app', 'http://localhost:5173']
 const corsOptions = {
-    origin: 'https://ubs-personality-test.vercel.app',
+    origin: listOfOrigin,
     methods: ['GET','HEAD','OPTIONS','PUT','PATCH','POST','DELETE'],
     credentials: true,
-    allowedHeaders: 'Content-Type,Authorization'
+    allowedHeaders: 'Content-Type,Authorization',
+    optionsSuccessStatus: 200
   };
 
-
-app.use(cors(corsOptions));
+app.options('*', cors())
+// app.use(cors(corsOptions));
 
 app.use(express.json());
 
