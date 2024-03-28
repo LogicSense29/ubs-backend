@@ -13,9 +13,9 @@ db.connect();
 const listOfOrigin = ['https://ubs-personality-test.vercel.app', 'http://localhost:5173']
 const corsOptions = {
     origin: listOfOrigin,
-    methods: ['GET','HEAD','OPTIONS','PUT','PATCH','POST','DELETE'],
+    methods: ['GET','HEAD','OPTIONS','PATCH','POST','DELETE'],
     credentials: true,
-    allowedHeaders: 'Content-Type,Authorization',
+    allowedHeaders: ['Content-Type,Authorization'],
     optionsSuccessStatus: 200
   };
 
