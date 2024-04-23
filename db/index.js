@@ -1,17 +1,15 @@
 const pg = require("pg");
-require("dotenv").config()
+require("dotenv").config();
 
-const PASSWORD= `${process.env.PASSWORD}`
-const DATABASE= `${process.env.DATABASE}`
+const PASSWORD = `${process.env.PASSWORD}`;
+const DATABASE = `${process.env.DATABASE}`;
 
-const db = new pg.Client(
-    {
-        user: "postgres",
-        host: "localhost",
-        database: DATABASE,
-        password: PASSWORD,
-        port: 5432,
-    }
-)
+const db = new pg.Client({
+  user: "postgres",
+  host: "localhost" || "35.160.120.126",
+  database: DATABASE,
+  password: PASSWORD,
+  port: 5432,
+});
 
 module.exports = db;
