@@ -24,7 +24,7 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json());
 
@@ -49,7 +49,7 @@ app.options(
 
 app.use("/api/users", authRoute);
 app.use("/api/results", resultRoute);
-app.options("/api/results", cors(corsOptions));
+// app.options("/api/results", cors(corsOptions));
 // app.post("http://umerabusinesschool.com/paystack-webhook", function(req, res) {
 // Retrieve the request's body
 // const event = req.body;
