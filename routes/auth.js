@@ -4,10 +4,6 @@ const { addUserValidation } = require("../validators/auth");
 const vMW = require("../middleware/authMW");
 const { getUsers, addUsers } = require("../controllers/auth");
 
-router.post("/login", getUsers);
-
-router.post("/register", addUserValidation, vMW, addUsers);
-
 router.get("/", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Credentials", "true");
@@ -18,6 +14,10 @@ router.get("/", (req, res) => {
     "PUT, POST, GET, DELETE, PATCH, OPTIONS"
   );
 });
+
+router.post("/login", getUsers);
+
+router.post("/register", addUserValidation, vMW, addUsers);
 
 module.exports = router;
 
