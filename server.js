@@ -24,20 +24,20 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
-app.options(
-  "/api/users",
-  cors({
-    origin: "https://ubs-personality-test.vercel.app",
-    methods: "GET,OPTIONS,HEAD,PUT,PATCH,POST,DELETE",
-    allowedHeaders:
-      "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization",
-    credentials: true,
-  })
-);
+// app.options(
+//   "/api/users",
+//   cors({
+//     origin: "https://ubs-personality-test.vercel.app",
+//     methods: "GET,OPTIONS,HEAD,PUT,PATCH,POST,DELETE",
+//     allowedHeaders:
+//       "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization",
+//     credentials: true,
+//   })
+// );
 
 // Middleware for handling preflight OPTIONS request for '/api/results'
 //   app.options('/api/results', cors({
